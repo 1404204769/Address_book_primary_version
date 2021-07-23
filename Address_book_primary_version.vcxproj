@@ -142,12 +142,7 @@
     <Text Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CuserMgr.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CuserMgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
