@@ -142,6 +142,7 @@
     <Text Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Batch data.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="Cuser.cpp" />
     <ClCompile Include="CuserMgr.cpp" />
