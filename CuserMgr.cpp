@@ -1,17 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "CuserMgr.h"
 #include <iostream>
-Cuser::Cuser() {
-	memset(pszName, 0, sizeof(pszName));
-	memset(pszTel, 0, sizeof(pszTel));
-	memset(pszAddress, 0, sizeof(pszAddress));
-}
-Cuser::Cuser(const char* TemPszName, const char* TemPszTel, const char* TemPszAdress) {
-	strcpy(pszName, TemPszName);
-	strcpy(pszTel, TemPszTel);
-	strcpy(pszAddress, TemPszAdress);
-}
-Cuser::~Cuser() {}
+
 CuserMgr::CuserMgr() {
 	VecByTel.clear();
 	readInfoFromFile();

@@ -2,22 +2,8 @@
 #ifndef _CUSERMGR_H_
 #define _CUSERMGR_H_
 #include<vector>
+#include "Cuser.h"
 using namespace std;
-class Cuser {
-	char pszName[20];//保存名字
-	char pszTel[20];//保存手机号
-	char pszAddress[50];//保存地址
-public:
-	Cuser();
-	Cuser(const char* TemPszName, const char* TemPszTel, const char* TemPszAdress);//拷贝函数
-	~Cuser();
-	char* getName() { return pszName; }
-	char* getTel() { return pszTel; }
-	char* getAddress() { return pszAddress; }
-	void setName(const char* _input) { strcpy(pszName, _input); }
-	void setTel(const char* _input) { strcpy(pszTel, _input); }
-	void setAddress(const char* _input) { strcpy(pszAddress, _input); }
-};
 class CuserMgr {
 	const char* const filename = "UserDatabase.txt";//用于保存数据的文件，不可以更改
 	vector<Cuser>VecByTel;//使用手机号作为索引，因为名字可能一样但是手机号不可能一样
