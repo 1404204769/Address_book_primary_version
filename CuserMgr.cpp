@@ -16,7 +16,11 @@ CuserMgr::CuserMgr() {
 	VecByTel.clear();
 	readInfoFromFile();
 }
-bool CuserMgr::checkTel(char* _inputTel) {
+CuserMgr::~CuserMgr() {
+	saveInfoToFile();
+	VecByTel.clear();
+}
+bool CuserMgr::checkTel(const char* _inputTel) {
 	//用于检查手机号是否规范，并且判断是否存在重复手机号
 	size_t nLen = strlen(_inputTel);
 	if (nLen != 11) {
@@ -24,7 +28,7 @@ bool CuserMgr::checkTel(char* _inputTel) {
 		return false;
 	}
 	else {
-		for (char* c = _inputTel; *c != 0; c++) {
+		for (const char* c = _inputTel; *c != 0; c++) {
 			if (*c <= '9' && *c >= '0')continue;
 			else {
 				cout << "手机号内存在非数字，请重新输入" << endl;
@@ -96,6 +100,7 @@ void CuserMgr::showDetailByName(const char* _searchName) {
 			cout << "name:" << it->getName() << endl;
 			cout << "Tel:" << it->getTel() << endl;
 			cout << "Address:" << it->getAddress() << endl;
+			_findByName = true;
 		}
 	}
 	if (_findByName) {
