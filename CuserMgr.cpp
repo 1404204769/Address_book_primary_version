@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "CuserMgr.h"
+#include "data.h"
 #include <iostream>
 
 CuserMgr::CuserMgr() {
@@ -31,8 +32,11 @@ bool CuserMgr::checkTel(const char* _inputTel) {
 }
 Cuser CuserMgr::GetUser() {
 	//用于生成随机数据
-	Cuser TemUser = Cuser();
-	return TemUser;
+	Cuser temUser; 
+	showRandomName(temUser);
+	showRandomTel(temUser);
+	showRandomAddress(temUser);
+	return temUser;
 }
 bool CuserMgr::AddUser(Cuser _input) {
 	//用于将数据添加到VecByTel数组内
@@ -42,8 +46,9 @@ bool CuserMgr::AddUser(Cuser _input) {
 bool CuserMgr::saveInfoToFile() {
 	//文件写操作
 	FILE* fp = fopen(filename, "w");
-	for (vector<Cuser>::iterator it = VecByTel.begin(); it != VecByTel.end(); ++it) {
-		fprintf(fp, "%s\t%s\t%s\n", it->getName(), it->getTel(), it->getAddress());
+	int nveclen = VecByTel.size();
+	for (int i = 0; i < nveclen; i++) {
+		fprintf(fp, "%s\t%s\t%s\n", VecByTel[i].getName(), VecByTel[i].getTel(), VecByTel[i].getAddress());
 	}
 	fclose(fp);
 	return true;
@@ -77,8 +82,8 @@ void CuserMgr::showName() {
 	}
 	cout << "通讯录数据如下" << endl;
 	//打印输出所有的现存的名字
-	for (vector<Cuser>::iterator it = VecByTel.begin(); it != VecByTel.end(); ++it) {
-		cout << it->getName() << "\t" << endl;
+	for (int i =0; i< VecByTel.size(); i++) {
+		cout <<i+1 <<"." << VecByTel[i].getName() << "\t" << endl;
 	}
 	cout << "数据输出完毕" << endl;
 }
