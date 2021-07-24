@@ -2,7 +2,7 @@
 #include "data.h"
 #include "Cuser.h"
 using namespace std;
-int main() {
+int test() {
 	//char str[10] = "ÀîËÄ";
 	//char arr[10] = "";
 	//cin >> arr;
