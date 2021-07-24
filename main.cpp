@@ -51,7 +51,7 @@ int choice() {
 	}
 	return choice;
 }
-int main() {
+int main1() {
 	while (1) {
 		system("cls");
 		cout << "欢迎使用李志诚的通讯录" << endl;

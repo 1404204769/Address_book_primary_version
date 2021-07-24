@@ -142,12 +142,14 @@
     <Text Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="data.cpp" />
     <ClCompile Include="Cuser.cpp" />
     <ClCompile Include="CuserMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="data.h" />
     <ClInclude Include="Cuser.h" />
     <ClInclude Include="CuserMgr.h" />
   </ItemGroup>
