@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-int test() {
+int main() {
 	char str[10] = "ÀîËÄ";
 	char arr[10] = "";
 	cin >> arr;
